@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Cars</title>
 </head>
 <body>
-<p th:text="${cars}"></p>
+<div th:each="car : ${cars}">
+    <h1 th:text="${car.getModel()}"/>
+    <h1 th:text="${car.getColor()}"/>
+    <h1 th:text="${car.getPrice()}"/>
+</div>
 </body>
 </html>

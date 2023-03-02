@@ -16,7 +16,7 @@ private CarService carService;
 
 @GetMapping("/cars")
     public String getCars(@RequestParam(value = "count", required = false) Integer count, Model model) {
-    if(count == 0 | count >= 5 & count == null) {
+    if(count >= 5 | count == null) {
         model.addAttribute("cars", carService.getCars(CarDaoImpl.getCarsList().size()));
     }
     model.addAttribute("cars", carService.getCars(count));
