@@ -52,16 +52,16 @@ public class UsersController {
         return "users/edit";
     }
 
-    @PostMapping("/{id}")
+    @PatchMapping("/{id}")
     public String update(@ModelAttribute("user") User user) {
         us.updateUser(user);
-        return "redirect:/users";
+        return "redirect:/users/index";
     }
 
-    @GetMapping("/{id}/del")
+    @DeleteMapping("/{id}/del")
     public String delete(@PathVariable("id") int id) {
         us.removeUserBiId(id);
-        return "redirect:/users";
+        return "redirect:/users/index";
     }
 
 }
