@@ -16,5 +16,9 @@
 <label>Email пользователя </label>
 <p th:text="${user.getEmail()}">VALUE</p>
 
+
+<form th:method="DELETE" th:action="@{/users/{id}(id=${user.getId()})}">
+<input type="submit" value="Удалить пользователя">
+</form>
 </body>
 </html>

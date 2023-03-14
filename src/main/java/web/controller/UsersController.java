@@ -58,7 +58,7 @@ public class UsersController {
         return "redirect:/users/index";
     }
 
-    @DeleteMapping("/{id}/del")
+    @DeleteMapping("/{id}")
     public String delete(@PathVariable("id") int id) {
         us.removeUserBiId(id);
         return "redirect:/users/index";
